@@ -17,13 +17,10 @@ export default function LandingPage({ page }) {
   return (
     <div>
       <h1>{page.title}</h1>
-      <div>
-        {render(page.content)}
-      </div>
+      <StructuredText data={page.content} />
     </div>
   )
 }
-
 
 
 
