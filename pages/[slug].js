@@ -1,4 +1,5 @@
 import { getLandingPages } from '../lib/datocms'
+import { render } from '@datocms/rich-text-react-renderer'
 
 export async function getStaticPaths() {
   const data = await getLandingPages()
@@ -16,7 +17,11 @@ export default function LandingPage({ page }) {
   return (
     <div>
       <h1>{page.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: page.content }} />
+      <div>
+        {render(page.content)}
+      </div>
     </div>
   )
 }
+
+
